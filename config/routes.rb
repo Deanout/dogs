@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
+
   resources :pins
   get 'litters', to: 'pages#litters'
   get 'photos', to: 'pins#index'
@@ -9,5 +10,5 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   root 'pages#home'
 
-  
+
 end

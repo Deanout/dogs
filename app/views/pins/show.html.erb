@@ -4,5 +4,7 @@
 <p>Submitted By: <%= @pin.user.name %></p>
 
 <%= link_to "Back", photos_path %>
+<% if current_user && is_admin? %>
 <%= link_to "Edit", edit_pin_path %>
 <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
