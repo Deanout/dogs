@@ -12,12 +12,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def get_pins input
-    @pins = Pin.all.order("created_at DESC")
-    return @pins[-input] 
+  def get_newest_pin input
+    @pins = Pin.all.order(:id).reverse_order.offset(input - 1).first
+    return @pins
   end
-
-  
 
   def is_admin?
     if current_user.admin?
@@ -34,7 +32,7 @@ class ApplicationController < ActionController::Base
     else
     end
   end
-  helper_method :get_pins
+  helper_method :get_newest_pin
   helper_method :is_admin!
   helper_method :is_admin?
 end
