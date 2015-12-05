@@ -1,7 +1,10 @@
-<div class="col-md-6 col-md-offset-3">
-<h1> Edit Pin </h1>
-<%= image_tag @pin.image.url(:medium) %>
-<%= render 'form' %>
-
-<%= link_to "Cancel", pin_path %>
+<div class="col-md-8 col-md-offset-2">
+	<div class= "panel panel-default">
+		<div class= "panel-heading pin_image">
+			<h1> Edit Pin </h1>
+			<%= link_to (image_tag @pin.image.url, class: "img-responsive"), photos_path %>
+		</div>
+		<%= render 'form' %>
+		<%= link_to "Cancel", pin_path %>
+	</div>
 </div>
