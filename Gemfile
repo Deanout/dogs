@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 ##### Dean's Gems go Hurr #####
 gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'masonry-rails'
+gem 'haml'
 ##### End of Dean's Gems  #####
 
 # Use jquery as the JavaScript library

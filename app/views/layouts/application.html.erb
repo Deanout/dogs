@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dogs</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= render 'layouts/navbar' %>
-<%= yield %>
-
-</body>
+	<head>
+		<title>Dogs 'n Stuff</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body style="padding-top: 50px">
+		<%= render 'layouts/navbar' %>
+		<div class="container-fluid">
+			<%= yield %>
+		</div>
+		<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, class: "alert alert-info" %>
+		<% end %>
+	</body>
+	<footer>
+		<script>
+		$(function(){
+		$('#masonry-container').masonry({
+		itemSelector: '.box',
+		columnWidth: 100,
+		isAnimated: !Modernizr.csstransitions,
+		isRTL: true
+		});
+		});
+		</script>
+	</footer>
 </html>
