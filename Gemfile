@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'masonry-rails'
 gem 'haml'
 gem 'devise'
+gem 'paperclip'
 ##### End of Dean's Gems  #####
 
 # Use jquery as the JavaScript library
