@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   resources :pins
   get 'litters', to: 'pages#litters'
   get 'photos', to: 'pins#index'

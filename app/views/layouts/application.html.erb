@@ -7,22 +7,53 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body style="padding-top: 50px">
+		<% if notice %>
+		<div id="notice_wrapper">
+			<p class="notice"><%= notice %> </p>
+		</div>
+		<% elsif alert %>
+		<div id="alert_wrapper">
+			<p class="alert"><%= alert %> </p>
+		</div>
+		<% end %>
 		<%= render 'layouts/navbar' %>
 		<div class="container-fluid">
 			<%= yield %>
 		</div>
-		<% flash.each do |name, msg| %>
-		<%= content_tag :div, msg, class: "alert alert-info" %>
-		<% end %>
+		
 	</body>
 	<footer>
+		
+		<!-- Menu Toggle Script -->
 		<script>
-		$(function(){
-		$('#masonry-container').masonry({
-		itemSelector: '.box',
-		columnWidth: 100,
-		isAnimated: !Modernizr.csstransitions,
-		isRTL: true
+		$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+		});
+		</script>
+		<script>
+		$('ul.nav li.dropdown').hover(function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+		}, function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+		});
+		</script>
+		<script>
+		$(document).ready(function () {
+		$('.dropdown-toggle').dropdown();
+		});
+		</script>
+		<script>
+		$(function() {
+		$('#notice_wrapper').delay(500).fadeIn('slow', function() {
+		$(this).delay(1000).fadeOut();
+		});
+		});
+		</script>
+		<script>
+		$(function() {
+		$('#alert_wrapper').delay(500).fadeIn('slow', function() {
+		$(this).delay(2500).fadeOut();
 		});
 		});
 		</script>
