@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_pins input
+    @pins = Pin.all.order("created_at DESC")
+    return @pins[-input] 
+  end
+
   
 
   def is_admin?
@@ -29,6 +34,7 @@ class ApplicationController < ActionController::Base
     else
     end
   end
+  helper_method :get_pins
   helper_method :is_admin!
   helper_method :is_admin?
 end
