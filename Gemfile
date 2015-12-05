@@ -21,8 +21,8 @@ gem 'masonry-rails'
 gem 'haml'
 gem 'devise'
 gem 'paperclip'
-
 gem 'jquery-turbolinks'
+gem 'acts_as_votable'
 ##### End of Dean's Gems  #####
 
 # Use jquery as the JavaScript library
