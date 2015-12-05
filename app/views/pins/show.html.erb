@@ -1,13 +1,27 @@
-<div class="container-fluid">
-<%= image_tag @pin.image.url(:medium) %>
-<h1> <%= @pin.title %> </h1>
-<p> <%= @pin.description %></p>
-
-<p>Submitted By: <%= @pin.user.name %></p>
-
-<%= link_to "Back", photos_path %>
-<% if current_user && is_admin? %>
-<%= link_to "Edit", edit_pin_path %>
-<%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+<div class="col-md-8 col-md-offset-2">
+	<div class= "panel panel-default">
+		<div class= "panel-heading pin_image">
+			<%= link_to (image_tag @pin.image.url, class: "img-responsive"), photos_path %>
+		</div>
+		<div class="panel-body">
+			<h1> <%= @pin.title %> </h1>
+			<p class="description"> <%= @pin.description %></p>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-md-6">
+					<p class="user"> Submitted By: <%= @pin.user.name %></p>
+				</div>
+				<div class="col-md-6">
+					<div class="btn-group pull-right">
+						<%= link_to "Back", photos_path, class: "btn btn-default" %>
+						<% if current_user && is_admin? %>
+						<%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
+						<%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

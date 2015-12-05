@@ -11,12 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery.masonry.min
 //= require masonry/jquery.masonry
-//= require masonry/jquery.event-drag
-//= require masonry/jquery.imagesloaded.min
-//= require masonry/jquery.infinitescroll.min
-//= require masonry/modernizr-transitions
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .

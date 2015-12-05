@@ -9,17 +9,11 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *= require 'masonry/transitions'
- *= require 'masonry/right-to-left'
  *= require_tree .
  *= require_self
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "masonry/fluid";
-
 body {
 	background: #E9E9E9;
 }
@@ -116,4 +110,23 @@ nav {
 
 textarea {
 	min-height: 250px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+  background: #D8D5D2;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: inline;
+  width: 260px;
+}
+
+
+.box img {
+  width: 100%;
 }
