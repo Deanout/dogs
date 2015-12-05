@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :pins
   get 'litters', to: 'pages#litters'
   get 'photos', to: 'pins#index'
