@@ -1,5 +1,6 @@
 class LittersController < ApplicationController
-  before_action :set_litter, only: [:show, :edit, :update, :destroy]
+  before_action :set_litter, only: [:show, :edit, :update, :destroy, :get_status]
+
 
   # GET /litters
   # GET /litters.json
@@ -69,6 +70,6 @@ class LittersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def litter_params
-      params.require(:litter).permit(:title, :body, :image)
+      params.require(:litter).permit(:title, :body, :image, :status)
     end
 end

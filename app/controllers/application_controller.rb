@@ -12,11 +12,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
+    def get_status input
+      @litter = input
+    if @litter.status == 0
+      return "Sales Status: Available!"
+    elsif @litter.status == 1
+      return "Sales Status: Pending Offers!"
+    else
+      return "Sales Status: Sold!"
+    end
+  end
+
   def get_newest_pin input
     @pins = Pin.all.order(:id).reverse_order.offset(input - 1).first
     return @pins
   end
-
   def is_admin?
     if current_user.admin?
       true
@@ -31,6 +41,7 @@ class ApplicationController < ActionController::Base
     else
     end
   end
+  helper_method :get_status
   helper_method :get_newest_pin
   helper_method :is_admin!
   helper_method :is_admin?

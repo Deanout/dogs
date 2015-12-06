@@ -1,5 +1,5 @@
 <!-- Half Page Image Background Carousel Header -->
-<header id="myCarousel" class="carousel slide">
+<header id="myCarousel" class="carousel slide auto">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -11,28 +11,28 @@
 		<div class="item active">
 			<!-- Set the first background image using inline CSS below. -->
 			<div class="fill">
-			<%= link_to image_tag(get_newest_pin(1).image.url, class:"fill"), get_newest_pin(1) %>
+				<%= link_to image_tag(get_newest_pin(1).image.url, class:"fill"), get_newest_pin(1) %>
 			</div>
 			<div class="carousel-caption">
-				<h2>Caption 1</h2>
+				<h2><%= get_newest_pin(1).title %></h2>
 			</div>
 		</div>
 		<div class="item">
 			<!-- Set the second background image using inline CSS below. -->
 			<div class="fill">
-			<%= link_to image_tag(get_newest_pin(2).image.url, class:"fill"), get_newest_pin(2) %>
+				<%= link_to image_tag(get_newest_pin(2).image.url, class:"fill"), get_newest_pin(2) %>
 			</div>
 			<div class="carousel-caption">
-				<h2>Caption 2</h2>
+				<h2><%= get_newest_pin(2).title %></h2>
 			</div>
 		</div>
 		<div class="item">
 			<!-- Set the third background image using inline CSS below. -->
 			<div class="fill">
-			<%= link_to image_tag(get_newest_pin(3).image.url, class:"fill"), get_newest_pin(3) %>
+				<%= link_to image_tag(get_newest_pin(3).image.url, class:"fill"), get_newest_pin(3) %>
 			</div>
 			<div class="carousel-caption">
-				<h2>Caption 3</h2>
+				<h2><%= get_newest_pin(3).title %></h2>
 			</div>
 		</div>
 	</div>
@@ -48,20 +48,48 @@
 <!-- Page Content -->
 <div class="container">
 <div class="row">
-	<div class="col-lg-12">
+	<div class="col-xs-6 col-sm-4 col-sm-push-4 boxlogo">
 		<h1>Half Slider by Start Bootstrap</h1>
-		<p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the <code>half-slider.css</code>file.</p>
+		<p>Leggings truffaut whatever art party street art. Everyday carry bicycle rights beard scenester put a bird on it vice aesthetic photo booth, offal meditation next level thundercats occupy butcher. Letterpress swag health goth neutra narwhal, food truck viral pitchfork. Fingerstache cardigan food truck mustache. Pickled gentrify taxidermy stumptown, locavore squid four loko retro narwhal DIY tilde biodiesel fashion axe leggings fanny pack. Meditation lumbersexual thundercats, artisan bicycle rights brunch food truck wayfarers typewriter. Blue bottle intelligentsia kombucha bespoke, post-ironic XOXO helvetica echo park sriracha food truck lo-fi pitchfork try-hard PBR&B leggings.<br>
+			Art party thundercats sriracha disrupt, fixie whatever hoodie distillery 3 wolf moon tilde. Narwhal banh mi skateboard kinfolk pabst. Heirloom squid swag vegan iPhone, taxidermy portland literally waistcoat tacos cornhole cardigan freegan. Brooklyn forage williamsburg, literally retro church-key 8-bit dreamcatcher venmo crucifix single-origin coffee locavore kale chips etsy bespoke. Truffaut before they sold out pabst, typewriter chambray thundercats butcher pug. Twee etsy everyday carry migas you probably haven't heard of them. Intelligentsia ennui pinterest, deep v raw denim banjo mustache sustainable.<br>
+			Beard organic bushwick, synth farm-to-table mlkshk selfies deep v shabby chic. Pitchfork artisan try-hard wolf humblebrag helvetica dreamcatcher, meggings sustainable listicle mixtape. Kale chips leggings schlitz, typewriter butcher ethical venmo master cleanse truffaut fingerstache. IPhone echo park banh mi, gluten-free hoodie squid photo booth vice sustainable etsy austin four dollar toast blog drinking vinegar brooklyn. Distillery selfies cray selvage tofu crucifix. Cred leggings normcore, yr intelligentsia selvage green juice etsy chartreuse. Chambray sartorial pork belly banh mi viral post-ironic keytar hella bespoke.<br>
+			Yuccie deep v etsy bushwick irony selvage, lumbersexual cardigan migas jean shorts vice drinking vinegar tofu seitan. Tumblr PBR&B taxidermy, church-key normcore twee vinyl biodiesel you probably haven't heard of them. Vice cardigan mlkshk, etsy pour-over direct trade post-ironic pinterest shabby chic fixie. Vice four dollar toast chia, shabby chic squid VHS literally vinyl organic try-hard ramps. Mumblecore 3 wolf moon butcher gluten-free farm-to-table. Art party keffiyeh heirloom bitters poutine franzen, before they sold out mixtape messenger bag craft beer retro tumblr. Kogi literally skateboard bushwick meditation, tumblr ethical portland lo-fi tote bag readymade scenester green juice truffaut.<br>
+			Oh. You need a little dummy text for your mockup? How quaint.<br><br>
+		I bet you’re still using Bootstrap too…</p>
+	</div>
+	<div class="col-xs-6 col-sm-8">
+		<div class="row">
+			<div class="col-sm-6 col-sm-pull-6 boxb">
+				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+				<h2>Marketing Box #1</h2>
+				<p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+			</div>
+			<div class="col-sm-6 boxa">
+				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+				<h2>Marketing Box #1</h2>
+				<p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+			</div>
+		</div>
+		<!-- Nested .row -->
 	</div>
 </div>
-<hr>
+</div>
 <!-- Footer -->
 <footer>
-	<div class="row">
-		<div class="col-lg-12">
-			<p>Copyright &copy; Your Website 2014</p>
-		</div>
+<div class="row">
+	<div class="col-lg-12">
+		<p>Copyright &copy; Your Website 2014</p>
 	</div>
-	<!-- /.row -->
+</div>
+<!-- /.row -->
+
+<script>
+$(function(){
+    $('.carousel').carousel({
+      interval: 10000
+    });
+});
+</script>
 </footer>
 </div>
 <!-- /.container -->

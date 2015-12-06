@@ -8,26 +8,26 @@
 			<p class="description"> <%= @pin.description %></p>
 		</div>
 		<div class="panel-footer">
-			<div class="row">
-				<div class="col-md-6">
-					<p class="user"> Submitted By: <%= @pin.user.name %></p>
-				</div>
-				<div class="col-md-6">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="btn-group pull-left">
+						 <%= link_to "Submitted By: " + @pin.user.name, users_show_path, class:"btn btn-default" %>
+					</div>
 					<div class="btn-group pull-right">
 						<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
-							<i class="glyphicon glyphicon-heart"></i> <%=@pin.get_upvotes.size %>
-							<% end %>
+						<i class="glyphicon glyphicon-heart"></i> <%=@pin.get_upvotes.size %>
+						<% end %>
 						<%= link_to "Back", photos_path, class: "btn btn-default" %>
 						<% if current_user && is_admin? %>
 						<%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
 						<%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
 						<% end %>
 					</div>
+					<!-- End of Buttons -->
 				</div>
-				<!-- End of Buttons -->
+				<!-- End of Row -->
 			</div>
-			<!-- End of Row -->
+			<!-- End of Footer -->
 		</div>
-		<!-- End of Footer -->
 	</div>
 </div>
