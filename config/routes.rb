@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'users', to: "users#index"
+
+  get 'users/show'
+
   devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
 
   resources :pins do

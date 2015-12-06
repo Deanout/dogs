@@ -1,0 +1,10 @@
+<div class="well">
+	<% @users.each do |user| %>
+	<div class="well">
+		<p> [<%= user.id %>] Name: <%= user.name %></p>
+		<% if current_user && is_admin? %>
+		<p> Email: <%= user.email %> </p>
+		<% end %>
+	</div>
+	<% end %>
+</div>
