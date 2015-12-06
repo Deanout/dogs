@@ -5,8 +5,8 @@
   <% end %>
   </h1>
 </div>
-<% @litters.each do |litter| %>
 <div class="col-md-8 col-md-offset-2">
+  <% @litters.each do |litter| %>
   <div class= "panel panel-default">
     <div class= "panel-heading pin_image">
       <%= link_to (image_tag litter.image.url, class: "img-responsive"), litter %>
@@ -16,25 +16,31 @@
       <p class="description"> <%= litter.body %></p>
     </div>
     <div class="panel-footer">
-      <div class="row">
-        <div class="col-md-6">
-          <p>Available or Sold</p>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="btn-group pull-left">
+            <% if litter.status == 0 %>
+          <%= link_to get_status(litter), litters_path, class:"btn btn-success" %></p>
+          <% elsif litter.status == 1 %>
+          <%= link_to get_status(litter),"#", class:"btn btn-warning" %>
+          <% elsif litter.status == 2 %>
+          <%= link_to get_status(litter),"#", class:"btn btn-danger" %>
+          <% end %>
         </div>
-        <div class="col-md-6">
-          <div class="btn-group pull-right">
-            <%= link_to litter.comments.length.to_s + " Comments", litter, class:"btn btn-default" %> 
-            <%= link_to "Show", litter, class: "btn btn-default" %>
-            <% if current_user && is_admin? %>
-            <%= link_to "Edit", edit_litter_path(litter), class: "btn btn-default" %>
-            <%= link_to "Delete", litter_path(litter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
-            <% end %>
-          </div>
+        <div class="btn-group pull-right">
+          <%= link_to "Back", litters_path, class: "btn btn-default" %>
+          <% if current_user && is_admin? %>
+          <%= link_to "Edit", edit_litter_path(litter), class: "btn btn-default" %>
+          <%= link_to "Delete", litter_path(litter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+          <% end %>
         </div>
         <!-- End of Buttons -->
       </div>
       <!-- End of Row -->
     </div>
-    <!-- End of Footer -->
   </div>
 </div>
 <% end %>
+<script>
+
+  </script>
