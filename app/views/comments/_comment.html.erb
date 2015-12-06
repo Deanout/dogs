@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <h5>
+  <strong>&nbsp;&nbsp;<%= link_to comment.user.name, users_show_path(comment.user) %></strong>
+  <div style="display: inline-block; float:right">
+    <% if current_user && is_admin? == true %>
+    <%= button_to 'Delete', [comment.litter, comment], method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+  </h5>
+  <div style="display: inline-block; color: #888888; padding-left: 15px; padding-bottom:10px;"><%= time_ago_in_words(comment.created_at) %> Ago </div>
+  <div class="well">
+    <div style="text-align: justify;">
+      <p><%= comment.comments %></p>
+    </div>
+  </div>
+</div>

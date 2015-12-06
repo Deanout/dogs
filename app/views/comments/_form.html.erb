@@ -1,0 +1,8 @@
+<%= simple_form_for ([@litter, @litter.comments.build]) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :comments, :placeholder => "Join the discussion...", class: "form-control", :id => 'textarea', :rows => 3 %>
+    <div style="float:right">
+      <p><%= f.submit "Comment as " + current_user.name, {:class => 'btn btn-primary btn-lg'} %></p>
+    </div>
+  </div>
+  <% end %>

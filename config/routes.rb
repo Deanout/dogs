@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :litters
+  resources :litters do
+    resources :comments do
+    end
+  end
   get 'users', to: "users#index"
 
   get 'users/show'

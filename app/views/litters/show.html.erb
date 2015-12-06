@@ -27,4 +27,15 @@
 		</div>
 		<!-- End of Footer -->
 	</div>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<h2><%= @litter.comments.count %> Comments </h2>
+		</div>
+		<%= render @litter.comments %>
+		<% if current_user %>
+		<%= render 'comments/form' %>
+		<% else %>
+		<h3><%= link_to 'Login to Post a Comment', new_user_session_path %></h3>
+		<% end %>
+	</div>
 </div>

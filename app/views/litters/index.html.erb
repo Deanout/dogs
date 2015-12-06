@@ -1,5 +1,9 @@
 <div class="col-md-8 col-md-offset-2">
-  <h1>Current Litters</h1>
+  <h1>Current Litters
+  <% if current_user && is_admin? %>
+  <%= link_to "New Litter Entry", new_litter_path, class: "btn btn-default", style: "float:right;" %>
+  <% end %>
+  </h1>
 </div>
 <% @litters.each do |litter| %>
 <div class="col-md-8 col-md-offset-2">
@@ -18,6 +22,7 @@
         </div>
         <div class="col-md-6">
           <div class="btn-group pull-right">
+            <%= link_to litter.comments.length.to_s + " Comments", litter, class:"btn btn-default" %> 
             <%= link_to "Show", litter, class: "btn btn-default" %>
             <% if current_user && is_admin? %>
             <%= link_to "Edit", edit_litter_path(litter), class: "btn btn-default" %>
