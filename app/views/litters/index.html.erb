@@ -1,0 +1,35 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1>Current Litters</h1>
+</div>
+<% @litters.each do |litter| %>
+<div class="col-md-8 col-md-offset-2">
+  <div class= "panel panel-default">
+    <div class= "panel-heading pin_image">
+      <%= link_to (image_tag litter.image.url, class: "img-responsive"), litter %>
+    </div>
+    <div class="panel-body">
+      <h1> <%= litter.title %> </h1>
+      <p class="description"> <%= litter.body %></p>
+    </div>
+    <div class="panel-footer">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Available or Sold</p>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group pull-right">
+            <%= link_to "Show", litter, class: "btn btn-default" %>
+            <% if current_user && is_admin? %>
+            <%= link_to "Edit", edit_litter_path(litter), class: "btn btn-default" %>
+            <%= link_to "Delete", litter_path(litter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </div>
+        <!-- End of Buttons -->
+      </div>
+      <!-- End of Row -->
+    </div>
+    <!-- End of Footer -->
+  </div>
+</div>
+<% end %>

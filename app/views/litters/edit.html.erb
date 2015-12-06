@@ -1,9 +1,8 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class= "panel panel-default">
 		<div class= "panel-heading pin_image">
-			<h1> Edit Pin </h1>
-			<%= link_to (image_tag @pin.image.url, class: "img-responsive"), photos_path %>
+			<h1> Edit Litter Entry</h1>
+			<%= render 'form' %>
 		</div>
-		<%= render 'form' %>
 	</div>
 </div>
