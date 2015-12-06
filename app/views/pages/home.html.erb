@@ -11,7 +11,9 @@
 		<div class="item active">
 			<!-- Set the first background image using inline CSS below. -->
 			<div class="fill">
+			<% if pins_exist? %>
 				<%= link_to image_tag(get_newest_pin(1).image.url, class:"fill"), get_newest_pin(1) %>
+			<% end %>
 			</div>
 			<div class="carousel-caption">
 				<h2><%= get_newest_pin(1).title %></h2>

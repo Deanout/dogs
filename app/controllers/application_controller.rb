@@ -27,6 +27,15 @@ class ApplicationController < ActionController::Base
     @pins = Pin.all.order(:id).reverse_order.offset(input - 1).first
     return @pins
   end
+
+  def pins_exist?
+    if Pin.first != nil
+      return true
+    else
+      return false
+    end
+  end
+
   def is_admin?
     if current_user.admin?
       true
@@ -41,6 +50,7 @@ class ApplicationController < ActionController::Base
     else
     end
   end
+  helper_method :pins_exist?
   helper_method :get_status
   helper_method :get_newest_pin
   helper_method :is_admin!
