@@ -28,7 +28,7 @@
           <% end %>
         </div>
         <div class="btn-group pull-right">
-          <%= link_to "Back", litters_path, class: "btn btn-default" %>
+          <%= link_to "More Details", litters_path, class: "btn btn-default" %>
           <% if current_user && is_admin? %>
           <%= link_to "Edit", edit_litter_path(litter), class: "btn btn-default" %>
           <%= link_to "Delete", litter_path(litter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
