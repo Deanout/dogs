@@ -3,6 +3,6 @@ class Pin < ActiveRecord::Base
 	belongs_to :user
 
 	has_attached_file :image, styles: {medium: "300x300>"},
-	:path => ":rails_root/files/:assetable_id/:basename.:extension"
+	:path => ":rails_root/public/"
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
