@@ -1,0 +1,1 @@
+git pull git@github.com:deanout/dogs.git && . /etc/default/unicorn && RAILS_ENV=production rake db:migrate && RAILS_ENV=production rake assets:precompile && service unicorn restart && service nginx reload
