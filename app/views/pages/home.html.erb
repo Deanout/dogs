@@ -11,9 +11,9 @@
 		<div class="item active">
 			<!-- Set the first background image using inline CSS below. -->
 			<div class="fill">
-			<% if pins_exist? %>
+				<% if pins_exist? %>
 				<%= link_to image_tag(get_newest_pin(1).image.url, class:"fill"), get_newest_pin(1) %>
-			<% end %>
+				<% end %>
 			</div>
 			<div class="carousel-caption">
 				<h2><%= get_newest_pin(1).title %></h2>
@@ -75,23 +75,20 @@
 		<!-- Nested .row -->
 	</div>
 </div>
-</div>
 <!-- Footer -->
 <footer>
-<div class="row">
-	<div class="col-lg-12">
-		<p style="text-align:center">Copyright &copy; Your Website 2015</p>
+	<div class="row">
+		<div class="col-lg-12">
+			<p style="text-align:center">Copyright &copy; Your Website 2015</p>
+		</div>
 	</div>
-</div>
-<!-- /.row -->
-
-<script>
-$(function(){
-    $('.carousel').carousel({
-      interval: 10000
-    });
-});
-</script>
+	<!-- /.row -->
+	<script>
+	$(function(){
+	$('.carousel').carousel({
+	interval: 10000
+	});
+	});
+	</script>
 </footer>
-</div>
 <!-- /.container -->
