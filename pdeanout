@@ -1,0 +1,2 @@
+git add . && git commit -m "Commited via pdeanout command" && git push git@github.com:deanout/dogs.git
+
